@@ -1,5 +1,36 @@
+* {
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 .sidebar{
-    position: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
     height: 100%;
-    width:200px
+}
+
+
+#content {
+    background-color: red;
+    padding: 5px !important;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto auto auto;
+}
+
+.card {
+    width: fit-content;
+}
+
+@media (max-width: 1000px) {
+    #content {
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width: 767px) {
+    #content {
+        grid-template-columns: 100%;
+    }
 }

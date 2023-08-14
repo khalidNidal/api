@@ -24,31 +24,32 @@ links.forEach((link) => {
 });
 
 async function getData(type) {
-  let request = await fetch(
-    `https://forkify-api.herokuapp.com/api/search?q=${type}`
-  );
-  let response = await request.json();
-  data = response.recipes;
-
-  displaydata();
+    try {
+        let request = await fetch(
+            `https://forkify-api.herokuapp.com/api/search?q=${type}`
+        );
+        let response = await request.json();
+        data = response.recipes;
+    } catch (err)
+    {
+        throw new Error("Error: ", err.message)
+    } 
+    displayData();
 }
 
 getData("pizza");
 
-function displaydata() {
-  let content = " ";
-  for (let i = 0; i < data.length; i++) {
-    content += `
+function displayData() {
+    let content = " ";
+    for (let i = 0; i < data.length; i++) {
+        content += `
 
-        <div class="col-md-4 my-3">
-            <div class="card p-2">
-                <h2>${data[i].title} </h2>
-                <p>${data[i].publisher} </p>
-                <img class="w-100" src="${data[i].image_url} " alt=""> 
-            </div>
-        </div>
-        
-        `;
-  }
-  document.getElementById("content").innerHTML = content;
+                <div class="card my-3 py-2">
+                    <h2>${data[i].title} </h2>
+                    <p>${data[i].publisher} </p>
+                    <img class="w-100 img-fluid" src="${data[i].image_url} " alt=""> 
+                </div>        
+            `;
+    }
+    document.getElementById("content").innerHTML = content;
 }
