@@ -1,5 +1,51 @@
-.sidebar{
+/* .sidebar{
     position: fixed;
     height: 100%;
     width:200px
+} */
+
+
+.info  {
+    margin: 0 !important;
+    padding: 0 !important;
+    
+}
+
+.n{
+  padding: 0%;  
+}
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+
+
+#content {
+    background-color: wheat;
+    padding: 5px !important;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.card {
+    width: 99%;
+}
+
+@media (max-width: 1000px) {
+    #content {
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width: 767px) {
+    #content {
+        grid-template-columns: 100%;
+    }
 }
