@@ -15,23 +15,6 @@
 
 //////////////////////////////////////////////////////////////////////////////// new way by using fetch
 
-// let request = new XMLHttpRequest()
-// let data;
-// function getdata(){
-// request.open('GET','https://forkify-api.herokuapp.com/api/search?q=pizza')
-// request.send()
-// request.onreadystatechange = function(){
-//     if(request.readyState==4 && request.status==200)
-//     data = JSON.parse(request.response).recipes  // console.log (request.response) // بطبع سترينج ف بدي احولها ل مصفوفة
-    
-//     console.log (data)
-// }
-// }
-// getdata()
-
-
-//////////////////////////////////////////////////////////////////////////////// new way by using fetch
-
 let data = [] ;
 var links = document.querySelectorAll('.nav-link');
 
@@ -75,4 +58,3 @@ function displaydata(){
     }
     document.getElementById("content").innerHTML = content
 }
-
